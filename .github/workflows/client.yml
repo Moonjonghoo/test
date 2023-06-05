@@ -7,14 +7,14 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout source code
+      - name: Checkout source code.
         uses: actions/checkout@v2
       - name: Install dependencies
         run: npm install
-        working-directory: "./my-agora-states-client"
+        working-directory: ./my-agora-states-client
       - name: Build
         run: npm run build
-        working-directory: "./my-agora-states-client"
+        working-directory: ./my-agora-states-client
       - name: SHOW AWS CLI VERSION
         run: |
           aws --version
@@ -28,4 +28,4 @@ jobs:
             --region ap-northeast-2 \
             build s3://fe-38-moonjonghoo-s3 \
             --delete
-        working-directory: "./my-agora-states-client"
+        working-directory: ./my-agora-states-client
